@@ -1,0 +1,15 @@
+name: BetaTPS
+version: ${project.version}
+main: me.buryings.betatps.BetaTPS
+softdepend: [ PlaceHolderAPI ]
+authors: [ Buryings ]
+description: Simple plugin to show the servers Ticks Per Second
+commands:
+  btps:
+    permission: betatps.viewtps
+    alises: [betatps, tpsb]
+    description: Sends the player server TPS count!
+  btpsreload:
+    permission: betatps.reload
+    aliases: [betatpsreload, reloadtpsb]
+    description: Reloads BetaTPS
