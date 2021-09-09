@@ -1,9 +1,9 @@
- # ╭━━╮╭━━━┳━━━━┳━━━╮╭━━━━┳━━━┳━━━╮ # Made by: Buryings (Bury#0001 on discord)
- # ┃╭╮┃┃╭━━┫╭╮╭╮┃╭━╮┃┃╭╮╭╮┃╭━╮┃╭━╮┃ # ────────────────────────────────────────
- # ┃╰╯╰┫╰━━╋╯┃┃╰┫┃╱┃┃╰╯┃┃╰┫╰━╯┃╰━━╮ # A simple TPS Counter plugin which sends
- # ┃╭━╮┃╭━━╯╱┃┃╱┃╰━╯┃╱╱┃┃╱┃╭━━┻━━╮┃ # the server's TPS to a player in a message
- # ┃╰━╯┃╰━━╮╱┃┃╱┃╭━╮┃╱╱┃┃╱┃┃╱╱┃╰━╯┃ # using the /btps command!
- # ╰━━━┻━━━╯╱╰╯╱╰╯╱╰╯╱╱╰╯╱╰╯╱╱╰━━━╯ # ────────────────────────────────────────
+# ╭━━╮╭━━━┳━━━━┳━━━╮╭━━━━┳━━━┳━━━╮ # Made by: Buryings (Bury#0001 on discord) #
+# ┃╭╮┃┃╭━━┫╭╮╭╮┃╭━╮┃┃╭╮╭╮┃╭━╮┃╭━╮┃ # ──────────────────────────────────────── #
+# ┃╰╯╰┫╰━━╋╯┃┃╰┫┃╱┃┃╰╯┃┃╰┫╰━╯┃╰━━╮ # A simple TPS Counter plugin which sends  #
+# ┃╭━╮┃╭━━╯╱┃┃╱┃╰━╯┃╱╱┃┃╱┃╭━━┻━━╮┃ # the server's TPS to a player in a message#
+# ┃╰━╯┃╰━━╮╱┃┃╱┃╭━╮┃╱╱┃┃╱┃┃╱╱┃╰━╯┃ # using the /btps command!                 #
+# ╰━━━┻━━━╯╱╰╯╱╰╯╱╰╯╱╱╰╯╱╰╯╱╱╰━━━╯ # ──────────────────────────────────────── #
 
 tps-message: "&aCurrent TPS: &2%tps%"
 no-permission: "&cYou do not have permission"

@@ -12,6 +12,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BetaTPS extends JavaPlugin implements Listener {
 
+    public static BetaTPS instance;
+
+    public static BetaTPS getInstace() {
+        return instance;
+    }
+    public static void setInstace(BetaTPS instance) {
+        BetaTPS.instance = instance;
+    }
+
 
     @Override
     public void onEnable() {
@@ -53,10 +62,6 @@ public final class BetaTPS extends JavaPlugin implements Listener {
 
     }
 
-    // public void reloadConfig() {
-    // System.out.println("[BETA TPS]: Configuration was reloaded!");
-    //     this.reloadConfig();
-    // }
     private void registers() {
 
         if (Bukkit.getPluginManager().getPlugin("PlaceHolderAPI") != null) {

@@ -28,24 +28,31 @@ public class CommandTPS implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if (command.getName().equalsIgnoreCase("btps")) {
-            final Player p = (Player) sender;
-            final double tps = CountTPS.getTPS();
-            final double readabletps = Math.round(tps * 100.0) / 100.0;
+        final double tps = CountTPS.getTPS();
+        final double readabletps = Math.round(tps * 100.0) / 100.0;
 
-            if (p.hasPermission("betaptps.viewtps")) {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', tpsmessage.replace("%tps%", String.valueOf(readabletps))));
-
-            } else if (!(p.hasPermission("betatps.viewtps"))) {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', noperm));
-            }
-            if (!(sender instanceof Player)) {
-                sender.sendMessage("This can only be used by players.");
-                System.out.println("[BETA TPS]: Denied access: " + sender.getName() + " - did not have permission to run /btps");
-                System.out.println("-------------------------------------" + "\nSERVER TPS: " + readabletps + "\n-------------------------------------");
-            }
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("This can only be used by players - Ran by CONSOLE, sending TPS to server console");
+            System.out.println("\n-------------------------------------" + "\nSERVER TPS: " + readabletps + "\n-------------------------------------");
+            return false;
         }
+
+        final Player p = (Player) sender;
+
+        if (p.hasPermission("betaptps.viewtps")) {
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', tpsmessage.replace("%tps%", String.valueOf(readabletps))));
+
+        } else if (!(p.hasPermission("betatps.viewtps"))) {
+            System.out.println("[BETA TPS]: Denied access: " + p.getName() + " - did not have permission to run /btps");
+            p.sendMessage(ChatColor.translateAlternateColorCodes('&', noperm));
+
+        }
+        {
+            }
 
         return false;
     }
 }
+
+
+
