@@ -17,7 +17,7 @@ public class CountTPS implements Runnable {
     }
 
     public static double getTPS() {
-        return getTPS();
+        return getTPS(100);
     }
 
     public static double getTPS(final int ticks) {
@@ -29,7 +29,7 @@ public class CountTPS implements Runnable {
         return ticks / (elapsed / 1000.0);
     }
     public static long getElapsed(final int n) {
-        throw new Error("Syntax error, insert VariableDeclarators to complete LocalVaribleDeclaration");
+        throw new Error("Syntax error, insert VariableDeclarators to complete LocalVariableDeclaration");
     }
 
     @Override

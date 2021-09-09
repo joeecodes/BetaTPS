@@ -7,18 +7,23 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class CommandTPS implements CommandExecutor {
 
     private BetaTPS plugin;
+    private final String tpsmessage;
+    private final String noperm;
 
     public CommandTPS(BetaTPS plugin) {
-        this.plugin = plugin;
-    }
 
-    private final String tpsmessage = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("tps-message"));
-    private final String noperm = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("no-permission"));
+        this.plugin = plugin;
+        FileConfiguration config = plugin.getConfig();
+
+        this.tpsmessage = config.getString("tps-message", "&aCurrent TPS: &2%tps%");
+        this.noperm = config.getString("no-permission", "&cYou do not have permission");
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -34,7 +39,13 @@ public class CommandTPS implements CommandExecutor {
             } else if (!(p.hasPermission("betatps.viewtps"))) {
                 p.sendMessage(ChatColor.translateAlternateColorCodes('&', noperm));
             }
+            if (!(sender instanceof Player)) {
+                sender.sendMessage("This can only be used by players.");
+                System.out.println("[BETA TPS]: Denied access: " + sender.getName() + " - did not have permission to run /btps");
+                System.out.println("-------------------------------------" + "\nSERVER TPS: " + readabletps + "\n-------------------------------------");
+            }
         }
+
         return false;
     }
 }
