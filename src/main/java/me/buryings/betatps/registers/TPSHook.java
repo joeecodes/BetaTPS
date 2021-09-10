@@ -14,7 +14,7 @@ public class TPSHook  {
         return "betatps";
     }
     public String getVersion() {
-        return "1.0.0";
+        return "1.0.3";
     }
     public String onPlaceholderRequest(final Player player, final String identifier) {
         if (identifier.equalsIgnoreCase("btps")) {
