@@ -14,10 +14,10 @@ public final class BetaTPS extends JavaPlugin implements Listener {
 
     public static BetaTPS instance;
 
-    public static BetaTPS getInstace() {
+    public static BetaTPS getInstance() {
         return instance;
     }
-    public static void setInstace(BetaTPS instance) {
+    public static void setInstance(BetaTPS instance) {
         BetaTPS.instance = instance;
     }
 
